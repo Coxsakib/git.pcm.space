@@ -1,12 +1,209 @@
+
+অবশ্যই — নিচে আরও স্টাইলিশ **cyber/hacker-themed** ভার্সন দিলাম, neon green/red color, glow effect, terminal background এবং hacker-style icon সহ।
+
+:::writing{variant="document" id="58321" title="Hacker Hunt Cyber Style HTML"}
+
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hacker BY  Hunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hacker Hunt</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #020604;
+      color: #00ff66;
+      font-family: "Courier New", monospace;
+      overflow: hidden;
+    }
+
+    /* Hacker background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,255,100,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,100,0.04) 1px, transparent 1px);
+      background-size: 35px 35px;
+      animation: gridMove 8s linear infinite;
+    }
+
+    @keyframes gridMove {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(35px);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 850px;
+      padding: 50px 25px;
+      text-align: center;
+
+      background: rgba(0, 15, 7, 0.88);
+      border: 2px solid #00ff66;
+      border-radius: 18px;
+
+      box-shadow:
+        0 0 10px #00ff66,
+        0 0 30px rgba(0,255,100,0.5),
+        inset 0 0 30px rgba(0,255,100,0.08);
+    }
+
+    .logo {
+      font-size: 70px;
+      margin-bottom: 20px;
+      color: #00ff66;
+      text-shadow:
+        0 0 10px #00ff66,
+        0 0 30px #00ff66;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        text-shadow: 0 0 10px #00ff66;
+      }
+      to {
+        transform: scale(1.08);
+        text-shadow:
+          0 0 15px #00ff66,
+          0 0 40px #00ff66;
+      }
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 65px);
+      letter-spacing: 4px;
+      color: #00ff66;
+      text-transform: uppercase;
+
+      text-shadow:
+        0 0 5px #00ff66,
+        0 0 15px #00ff66,
+        0 0 35px #00ff66;
+
+      animation: glitch 2s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% {
+        transform: translate(0);
+      }
+
+      92% {
+        transform: translate(3px, -2px);
+        color: #ff003c;
+      }
+
+      94% {
+        transform: translate(-3px, 2px);
+        color: #00ffff;
+      }
+    }
+
+    .success {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #ff003c;
+      text-shadow: 0 0 15px #ff003c;
+      font-weight: bold;
+    }
+
+    .terminal {
+      margin-top: 30px;
+      padding: 20px;
+      text-align: left;
+      border: 1px solid #00ff66;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: inset 0 0 20px rgba(0,255,100,0.1);
+    }
+
+    .terminal p {
+      margin: 8px 0;
+      color: #00ff66;
+    }
+
+    .terminal .red {
+      color: #ff003c;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 18px;
+      background: #00ff66;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .footer {
+      margin-top: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Successful Takeover — Hacker Hunt</h1>
+  <div class="container">
+
+    <!-- Hacker Logo -->
+    <div class="logo">☠</div>
+
+    <!-- Main Heading -->
+    <h1>Successful Takeover</h1>
+
+    <div class="success">
+      [ HACKER HUNT ]
+    </div>
+
+    <!-- Fake Terminal Display -->
+    <div class="terminal">
+      <p>&gt; Initializing Hacker Hunt...</p>
+      <p>&gt; Scanning target...</p>
+      <p>&gt; Security challenge detected...</p>
+      <p class="red">&gt; STATUS: SUCCESSFUL TAKEOVER</p>
+      <p>&gt; Mission completed<span class="cursor"></span></p>
+    </div>
+
+    <div class="footer">
+      CYBER SECURITY • HACKER HUNT • TRAINING MODE
+    </div>
+
+  </div>
 
 </body>
 </html>
+```
+
+:::
+
+এটা **শুধু visual/demo effect**—কোনো বাস্তব সিস্টেম takeover করে না। চাইলে আমি এটাতে  Matrix falling-code effect **,** animated hacker mask/logo **,** sound effect **এবং আরও** premium neon UI  যোগ করে দিতে পারি।
